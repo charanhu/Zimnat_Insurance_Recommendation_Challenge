@@ -105,7 +105,7 @@ def top_5_table(key):
     st.table(label_1_df.rename(
         columns={'PCODE': 'Insurance Policy Code', 'Label': 'Probability'}).style.format({'Probability': '{:.2%}'}))
     # add Table Title
-    st.subheader("Top 5 Insurance Policies")
+    st.subheader("Recommended Insurance Policies")
     # print the top 5 values in a table format. and rename the columns PCODE as Insurance Policy Code and Label as Probability. and multiply the probability by 100.
     st.table(top_5_df.rename(
         columns={'PCODE': 'Insurance Policy Code', 'Label': 'Probability'}).style.format({'Probability': "{:.2%}"}))
