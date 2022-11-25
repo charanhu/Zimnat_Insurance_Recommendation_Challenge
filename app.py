@@ -95,15 +95,13 @@ def top_5_table(key):
     top_5_df = pd.DataFrame(top_5_list, columns=['PCODE', 'Label'])
     # create a new dataframe for label = 1 values
     label_1_df = pd.DataFrame(label_1_list, columns=['PCODE', 'Label'])
-    # create a new dataframe for top 5 values
-    top_5_df = pd.DataFrame(top_5_list, columns=['PCODE', 'Label'])
-    # create a new dataframe for label = 1 values
-    label_1_df = pd.DataFrame(label_1_list, columns=['PCODE', 'Label'])
     # add Table Title
     st.subheader("Existing Insurance Policies")
+    # print the label = 1 values in a table format PCODE only. rename PCODE to Insurance Policy Code.
+    st.table(label_1_df['PCODE'].rename('Insurance Policy Code'))
     # print the label = 1 values in a table format. and rename the columns PCODE as Insurance Policy Code and Label as Probability. and multiply the probability by 100.
-    st.table(label_1_df.rename(
-        columns={'PCODE': 'Insurance Policy Code', 'Label': 'Probability'}).style.format({'Probability': '{:.2%}'}))
+    # st.table(label_1_df.rename(
+    #     columns={'PCODE': 'Insurance Policy Code', 'Label': 'Probability'}))
     # add Table Title
     st.subheader("Recommended Insurance Policies")
     # print the top 5 values in a table format. and rename the columns PCODE as Insurance Policy Code and Label as Probability. and multiply the probability by 100.
